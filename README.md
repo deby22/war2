@@ -22,19 +22,19 @@ iex -S mix
 
 ```elixir
 # Start supervisor 
-{:ok, pid} = Game.Application.start([], [])
+{:ok, pid} = War.Application.start([], [])
 
 # put new bet
-Game.new_bet(%{"card-odd": "war"})
+War.new_bet(%{"card-odd": "war"})
 
 # shuffling card before round
-Game.shuffle_cards
+War.shuffle_cards
 
 # grab player card
-Game.grab_player_card
+War.grab_player_card
 
 # grab croupier card
-Game.grab_croupier_card
+War.grab_croupier_card
 
 ## Installation
 
