@@ -11,7 +11,7 @@ defmodule War.GameManager do
   alias Bets.Bets
   alias War.{Summary, Game}
 
-  def new_game, do: {:ok, Game.new()}
+  def new_game(), do: {:ok, Game.new()}
 
   def create_bet(game, _) when map_size(game.bet) != 0,
     do: {:error, "You couldn't put another bet"}

@@ -1,4 +1,4 @@
-defmodule Game.GameTest do
+defmodule War.GameTest do
   use ExUnit.Case
   alias War.Game
   alias Cards.Deck

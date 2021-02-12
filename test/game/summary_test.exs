@@ -1,4 +1,4 @@
-defmodule Game.SummaryTest do
+defmodule War.SummaryTest do
   use ExUnit.Case
   alias War.{Summary, Game}
   alias Cards.Deck

@@ -1,4 +1,4 @@
-defmodule Game.GameManagerTest do
+defmodule War.GameManagerTest do
   use ExUnit.Case
   alias War.{Game, GameManager}
   doctest War
