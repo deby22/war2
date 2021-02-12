@@ -1,8 +1,8 @@
-defmodule War2Test do
+defmodule WarTest do
   use ExUnit.Case
-  doctest War2
+  doctest War
 
   test "greets the world" do
-    assert War2.hello() == :world
+    assert War.hello() == :world
   end
 end

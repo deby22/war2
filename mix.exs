@@ -1,9 +1,9 @@
-defmodule War2.MixProject do
+defmodule War.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :war2,
+      app: :war,
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,

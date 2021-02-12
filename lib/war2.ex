@@ -1,6 +1,6 @@
-defmodule War2 do
+defmodule War do
   @moduledoc """
-  Documentation for `War2`.
+  Documentation for `War`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule War2 do
 
   ## Examples
 
-      iex> War2.hello()
+      iex> War.hello()
       :world
 
   """
