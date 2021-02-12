@@ -1,9 +1,10 @@
 defmodule Game.Game do
   defstruct [
-    :bet,
-    :player_card,
-    :croupier_card,
+    :"player-card",
+    :"croupier-card",
+    :"card-odd",
     cards: [],
+    bet: %{},
     shuffled_times: 0
   ]
 
@@ -25,18 +26,22 @@ defmodule Game.Game do
   def grab_player_card(game) do
     [grabbed | others] = game.cards
     game = %Game{game | cards: others}
-    %Game{game | player_card: grabbed}
+    %Game{game | "player-card": grabbed}
   end
 
   def grab_croupier_card(game) do
     [grabbed | others] = game.cards
     game = %Game{game | cards: others}
-    %Game{game | croupier_card: grabbed}
+    %Game{game | "croupier-card": grabbed}
   end
 
   def play_round(game) do
-    player = game.player_card
-    croupier = game.croupier_card
+    %Game{game | "card-odd": do_play_round(game)}
+  end
+
+  defp do_play_round(game) do
+    player = game."player-card"
+    croupier = game."croupier-card"
 
     cond do
       croupier.power > player.power -> "croupier"
