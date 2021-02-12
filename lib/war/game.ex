@@ -1,4 +1,4 @@
-defmodule Game.Game do
+defmodule War.Game do
   defstruct [
     :"player-card",
     :"croupier-card",
@@ -8,35 +8,34 @@ defmodule Game.Game do
     shuffled_times: 0
   ]
 
-  alias Game.Game
   alias Cards.Deck
 
-  def new(), do: %Game{cards: Deck.create_deck()}
+  def new(), do: %__MODULE__{cards: Deck.create_deck()}
 
-  def create_bet(game, bet), do: %Game{game | bet: bet}
+  def create_bet(game, bet), do: %__MODULE__{game | bet: bet}
 
   def shuffle_deck_of_card(game) do
     # TODO: do przebudowy tak żeby shuffle wykonywało się raz
     times = 30
     cards = Deck.shuffle(game.cards, times)
-    game = %Game{game | cards: cards}
-    %Game{game | shuffled_times: game.shuffled_times + times}
+    game = %__MODULE__{game | cards: cards}
+    %__MODULE__{game | shuffled_times: game.shuffled_times + times}
   end
 
   def grab_player_card(game) do
     [grabbed | others] = game.cards
-    game = %Game{game | cards: others}
-    %Game{game | "player-card": grabbed}
+    game = %__MODULE__{game | cards: others}
+    %__MODULE__{game | "player-card": grabbed}
   end
 
   def grab_croupier_card(game) do
     [grabbed | others] = game.cards
-    game = %Game{game | cards: others}
-    %Game{game | "croupier-card": grabbed}
+    game = %__MODULE__{game | cards: others}
+    %__MODULE__{game | "croupier-card": grabbed}
   end
 
   def play_round(game) do
-    %Game{game | "card-odd": do_play_round(game)}
+    %__MODULE__{game | "card-odd": do_play_round(game)}
   end
 
   defp do_play_round(game) do

@@ -1,6 +1,6 @@
 defmodule Game.SummaryTest do
   use ExUnit.Case
-  alias Game.{Summary, Game}
+  alias War.{Summary, Game}
   alias Cards.Deck
   alias Bets.Bets
 

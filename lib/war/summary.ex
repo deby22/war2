@@ -1,4 +1,4 @@
-defmodule Game.Summary do
+defmodule War.Summary do
   defstruct ~w"suit-player card-odd color-croupier color-player sout-croupier"a
 
   def summary(game) do

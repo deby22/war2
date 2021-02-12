@@ -1,6 +1,6 @@
 defmodule Game.GameTest do
   use ExUnit.Case
-  alias Game.Game
+  alias War.Game
   alias Cards.Deck
   doctest War
 
