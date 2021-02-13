@@ -3,6 +3,7 @@ defmodule War do
     Client for GameServer
   """
   alias War.GameServer
+
   def new_bet(bet) when is_map(bet), do: GameServer.new_bet(bet)
   def get_bet, do: GameServer.get_bet()
   def shuffle_cards, do: GameServer.shuffle_cards()
