@@ -4,6 +4,7 @@ defmodule Cards.Card do
   @enforce_keys [:color, :suit, :value]
   defstruct [:color, :suit, :value, :power]
 
+  @spec new(String.t(), String.t()) :: %__MODULE__{}
   def new(suit, value) do
     %Cards.Card{
       suit: suit,
