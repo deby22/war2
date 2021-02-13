@@ -5,6 +5,7 @@ defmodule War.Summary do
 
   defstruct ~w"suit-player card-odd color-croupier color-player suit-croupier"a
 
+  @spec summary(%War.Game{}) :: %__MODULE__{}
   def summary(game) do
     summary =
       game
