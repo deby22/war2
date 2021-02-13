@@ -1,4 +1,8 @@
 defmodule War.Summary do
+  @moduledoc """
+    Submodule to generate summary of Game
+  """
+
   defstruct ~w"suit-player card-odd color-croupier color-player suit-croupier"a
 
   def summary(game) do

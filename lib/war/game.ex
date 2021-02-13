@@ -1,4 +1,15 @@
 defmodule War.Game do
+  @moduledoc """
+    Core domain Game as state in Server
+    Include basic operation
+      new game
+      create new bet
+      shuffle deck of card
+      grab player card
+      grab croupier card
+      play round
+  """
+
   defstruct [
     :"player-card",
     :"croupier-card",
@@ -15,7 +26,6 @@ defmodule War.Game do
   def create_bet(game, bet), do: %__MODULE__{game | bet: bet}
 
   def shuffle_deck_of_card(game) do
-    # TODO: do przebudowy tak żeby shuffle wykonywało się raz
     times = 30
     cards = Deck.shuffle(game.cards, times)
     game = %__MODULE__{game | cards: cards}

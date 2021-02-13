@@ -1,4 +1,14 @@
 defmodule Bets.Bet do
+  @moduledoc """
+    Bet of game
+      At least one position is required
+      Allowed bet:
+        suit-player as heart, diamond, club or spade
+        card-odd as heart, diamond, club or spade
+        color-croupier as black or red
+        color-player as black or red
+        card-odd as player, croupier or war
+  """
   alias Bets.BetValidator
 
   defstruct ~w"suit-player card-odd color-croupier color-player suit-croupier"a

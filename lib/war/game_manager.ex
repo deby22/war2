@@ -1,12 +1,11 @@
 defmodule War.GameManager do
-  @doc """
-  Allowed states
-    new game
-    game with bet
-    shuffled card
-    grabbed player card
-    grabbed croupier card
-
+  @moduledoc """
+    Process of War Game
+      User cannot start game before put bet
+      Before grab, card must be shuffled
+      Player grab card first
+      Croupier could grab card after player
+      After 3seconds of grabbing card by grabier user will see result
   """
   alias Bets.Bets
   alias War.{Summary, Game}

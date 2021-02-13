@@ -1,4 +1,5 @@
 defmodule Bets.BetValidator do
+  @moduledoc false
   def valid?(fields) do
     fields
     |> Map.get(:errors, [])
