@@ -1,12 +1,14 @@
 defmodule Bets.BetValidator do
   @moduledoc false
 
+  @spec valid?(%Bets.Bet{}) :: boolean
   def valid?(fields) do
     fields
     |> Map.get(:errors, [])
     |> Enum.empty?()
   end
 
+  @spec validate_field(%Bets.Bet{}, atom, list(String.t())) :: map()
   def validate_field(fields, field, allowed_choices) do
     value = Map.get(fields, field)
 
@@ -18,6 +20,7 @@ defmodule Bets.BetValidator do
     end
   end
 
+  @spec validate_at_least_one_value(%Bets.Bet{}) :: map()
   def validate_at_least_one_value(fields) do
     if at_least_one_value?(fields) do
       fields
