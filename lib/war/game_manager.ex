@@ -49,5 +49,9 @@ defmodule War.GameManager do
     {:error, "Player grab card first"}
   end
 
+  def grab_croupier_card(game) when game."croupier-card" != nil do
+    {:error, "Croupier can't grab another Card. Wait for result."}
+  end
+
   def grab_croupier_card(game), do: {:ok, Game.grab_croupier_card(game)}
 end

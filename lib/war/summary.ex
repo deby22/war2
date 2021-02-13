@@ -1,14 +1,17 @@
 defmodule War.Summary do
-  defstruct ~w"suit-player card-odd color-croupier color-player sout-croupier"a
+  defstruct ~w"suit-player card-odd color-croupier color-player suit-croupier"a
 
   def summary(game) do
-    game
-    |> card_summary(:"player-card", :"suit-player", :suit)
-    |> card_summary(:"croupier-card", :"suit-croupier", :suit)
-    |> card_summary(:"player-card", :"color-player", :color)
-    |> card_summary(:"croupier-card", :"color-croupier", :color)
-    |> round_summary()
-    |> Map.get(:summary)
+    summary =
+      game
+      |> card_summary(:"player-card", :"suit-player", :suit)
+      |> card_summary(:"croupier-card", :"suit-croupier", :suit)
+      |> card_summary(:"player-card", :"color-player", :color)
+      |> card_summary(:"croupier-card", :"color-croupier", :color)
+      |> round_summary()
+      |> Map.get(:summary)
+
+    struct(__MODULE__, summary)
   end
 
   defp round_summary(game) do

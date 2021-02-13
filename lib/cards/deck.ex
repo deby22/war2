@@ -12,7 +12,6 @@ defmodule Cards.Deck do
   end
 
   def shuffle(cards) do
-    # TODO: Mayby add nice format to this message
     IO.inspect("Shuffling deck of Card")
     Enum.shuffle(cards)
   end
