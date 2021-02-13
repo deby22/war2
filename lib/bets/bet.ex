@@ -17,6 +17,7 @@ defmodule Bets.Bet do
   @allowed_colors ~w"black red"
   @allowed_odd ~w"player croupier war"
 
+  @spec validate_bet(%__MODULE__{}) :: map()
   def validate_bet(bet = %__MODULE__{}) do
     bet
     |> BetValidator.validate_at_least_one_value()
