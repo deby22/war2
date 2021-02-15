@@ -14,6 +14,7 @@ defmodule Cards.Card do
     }
   end
 
+  @spec get_color_by_suit(String.t()) :: String.t()
   defp get_color_by_suit(suit) do
     case suit do
       "heart" -> "red"
@@ -23,6 +24,7 @@ defmodule Cards.Card do
     end
   end
 
+  @spec get_power_by_value(String.t()) :: integer()
   defp get_power_by_value(value) when value == "A", do: 11
   defp get_power_by_value(value) when value in ["J", "Q", "K"], do: 10
 
