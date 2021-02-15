@@ -11,7 +11,9 @@ User can put bet, shuffling card and play agains croupier.
 * Before grabbing card user have to tell croupier to shuffling the card
 * Player grab card first.
 * After 3 seconds of grabbing card by croupier player will see results
-* After Game starts new game
+* * Supervisor stop GenServer, and starts new one, as "New Game"
+
+
 
 ## Usage
 
