@@ -1,6 +1,6 @@
 defmodule War.GameServerTest do
   use ExUnit.Case, async: true
-  alias War.{Game, GameServer}
+  alias War.GameServer
 
   doctest War
 
