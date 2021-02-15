@@ -29,6 +29,7 @@ defmodule Bets.BetValidator do
     end
   end
 
+  @spec at_least_one_value?(%Bets.Bet{}) :: boolean
   defp at_least_one_value?(fields) do
     fields
     |> Map.from_struct()
@@ -37,6 +38,7 @@ defmodule Bets.BetValidator do
     |> Enum.any?()
   end
 
+  @spec add_error(%Bets.Bet{}, String.t()) :: %{errors: list()}
   defp add_error(fields, error_message) do
     if Map.has_key?(fields, :errors) do
       Map.update(fields, :errors, [], &[error_message | &1])
