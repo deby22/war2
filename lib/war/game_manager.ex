@@ -76,5 +76,7 @@ defmodule War.GameManager do
     {:error, "Croupier can't grab another Card. Wait for result."}
   end
 
-  def grab_croupier_card(game), do: {:ok, Game.grab_croupier_card(game)}
+  def grab_croupier_card(game) do
+    {:ok, Game.grab_croupier_card(game) |> Game.play_round()}
+  end
 end

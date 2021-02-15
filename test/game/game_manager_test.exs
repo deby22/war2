@@ -118,21 +118,6 @@ defmodule War.GameManagerTest do
     assert false == summary."suit-player"
   end
 
-  test "game summary before play" do
-    bet = %{"card-odd": "war"}
-    {:ok, game} = GameManager.new_game()
-    {:ok, game} = GameManager.create_bet(game, bet)
-    {:ok, game} = GameManager.shuffle_deck_of_card(game)
-    {:ok, game} = GameManager.grab_player_card(game)
-    {:ok, game} = GameManager.grab_croupier_card(game)
-    player_card = Cards.Deck.create_card("spade", "3")
-    croupier_card = Cards.Deck.create_card("spade", "3")
-    game = %Game{game | "player-card": player_card}
-    game = %Game{game | "croupier-card": croupier_card}
-    {:error, message} = GameManager.game_summary(game)
-    assert "You can't get summary before play" == message
-  end
-
   test "grab card before shuffling should return error" do
     bet = %{"card-odd": "croupier"}
     {:ok, game} = GameManager.new_game()
